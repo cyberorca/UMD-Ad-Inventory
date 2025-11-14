@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
     const mainJs = manifest['main.js']?.path || '';
     const newstagJs = manifest['newstag.js']?.path || '';
     const skinadJs = manifest['skinad.js']?.path || '';
+    const advertorialEmbedJs = manifest['advertorialEmbed.js']?.path || '';
 
     res.send(`
         <!DOCTYPE html>
@@ -34,6 +35,10 @@ app.get('/', (req, res) => {
 
             <!-- Load SkinAd module -->
             ${skinadJs ? `<script src="${skinadJs}"></script>` : ''}
+
+            <!-- Load SkinAd module -->
+            ${advertorialEmbedJs ? `<script src="${advertorialEmbedJs}"></script>` : ''}
+
         </body>
         </html>
     `);

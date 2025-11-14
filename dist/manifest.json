@@ -1,14 +1,18 @@
 {
   "main.js": {
-    "path": "/KLYCreative.1.0.0.umd.js",
+    "path": "/KLYCreative.1.0.1-beta.0.umd.js",
     "chunk": "initial"
   },
   "newstag.js": {
-    "path": "/KLYCreative.newstag.1.0.0.29db428340915c315352.js",
+    "path": "/KLYCreative.newstag.1.0.1-beta.0.29db428340915c315352.js",
     "chunk": "chunk"
   },
   "skinad.js": {
-    "path": "/KLYCreative.skinad.1.0.0.22c4964ec41fcd2b3ebc.js",
+    "path": "/KLYCreative.skinad.1.0.1-beta.0.22c4964ec41fcd2b3ebc.js",
+    "chunk": "chunk"
+  },
+  "advertorialEmbed.js": {
+    "path": "/KLYCreative.advertorialEmbed.1.0.1-beta.0.503d2e618b634c23f2af.js",
     "chunk": "chunk"
   }
 }
