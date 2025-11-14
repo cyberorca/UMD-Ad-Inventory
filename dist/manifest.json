@@ -1,0 +1,14 @@
+{
+  "main.js": {
+    "path": "/KLYCreative.1.0.0.umd.js",
+    "chunk": "initial"
+  },
+  "newstag.js": {
+    "path": "/KLYCreative.newstag.1.0.0.29db428340915c315352.js",
+    "chunk": "chunk"
+  },
+  "skinad.js": {
+    "path": "/KLYCreative.skinad.1.0.0.22c4964ec41fcd2b3ebc.js",
+    "chunk": "chunk"
+  }
+}

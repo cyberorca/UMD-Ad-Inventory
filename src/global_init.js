@@ -11,11 +11,11 @@ async function init(format, config) {
   try {
     switch (format) {
       case "newstag":
-        const { Newstag } = await import("./modules/Newstag.js");
+        const { Newstag } = await import(/* webpackChunkName: "newstag" */ "./modules/Newstag.js");
         Newstag(config, site, platform, doc);
         break;
       case "skinad":
-        const { SkinAd } = await import("./modules/SkinAd.js");
+        const { SkinAd } = await import(/* webpackChunkName: "skinad" */ "./modules/SkinAd.js");
         SkinAd(config, platform, doc);
         break;
       default:
