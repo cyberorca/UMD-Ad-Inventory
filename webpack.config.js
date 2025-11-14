@@ -5,7 +5,8 @@ module.exports = {
   entry: "./src/global_init.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "adInventory.umd.js",
+    filename: "adInventory.umd.js", // Main bundle
+    chunkFilename: "adInventory.[name].[contenthash].js", // Dynamic imports
     library: "adInventory",
     libraryTarget: "umd",
     globalObject: "this"

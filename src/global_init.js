@@ -1,24 +1,28 @@
-import { Newstag } from "./modules/Newstag.js";
-import { SkinAd } from "./modules/SkinAd.js";
-
 const doc = (typeof parent !== "undefined" && parent.document) ? parent.document : document;
 const kly = (typeof parent !== "undefined" && (parent.kly || parent.kmklabs)) || {};
 let site = (kly.site || "").toLowerCase();
 if (site === "bola.com") site = "bolacom";
 const platform = (kly.platform || "").toLowerCase();
 
-function init(format, config) {
+async function init(format, config) {
   config = config || {};
   format = (format || "").toLowerCase();
-  switch (format) {
-    case "newstag":
-      Newstag(config, site, platform, doc);
-      break;
-    case "skinad":
-      SkinAd(config, platform, doc);
-      break;
-    default:
-      console.warn("Unknown format:", format);
+
+  try {
+    switch (format) {
+      case "newstag":
+        const { Newstag } = await import("./modules/Newstag.js");
+        Newstag(config, site, platform, doc);
+        break;
+      case "skinad":
+        const { SkinAd } = await import("./modules/SkinAd.js");
+        SkinAd(config, platform, doc);
+        break;
+      default:
+        console.warn("Unknown format:", format);
+    }
+  } catch (error) {
+    console.error(`Failed to load creative "${format}":`, error);
   }
 }
 
@@ -47,51 +51,4 @@ function init(format, config) {
 })();
 
 export { init };
-
-
-
-
-// import { Newstag } from "./modules/Newstag.js";
-// import { SkinAd } from "./modules/SkinAd.js";
-
-// (function (root, factory) {
-//     console.log("sdfsdfsdf");
-//     if (typeof define === "function" && define.amd){
-//         define([], factory);
-//         console.log("I'm here! => define");
-//     } else if (typeof module === "object" && module.exports) {
-//         module.exports = factory();
-//         console.log("I'm here! => module");
-//     }else {
-//         root.adInventory = factory();
-//         console.log("I'm here! => root");
-//     }
-// })(this, function () {
-    
-//     var doc = parent.document || document;
-//     var kly = parent.kly || parent.kmklabs || {};
-//     var site = (kly.site || "").toLowerCase();
-//     if (site === "bola.com") site = "bolacom";
-//     var platform = (kly.platform || "").toLowerCase();
-
-//     // console.log("I'm here! => init", "| Doc : ", doc,"| KLY : ", kly,"| Site : ", site, "| Platform : ",platform);
-
-//     function init(format, config) {
-//         config = config || {};
-//         var format = (format || "").toLowerCase();
-        
-//         console.log("#2. I'm here! => init", "| config : ", config,"| format : ", format);
-        
-//         switch (format) {
-//             case "newstag":
-//                 Newstag(config, site, platform, doc);
-//                 break;
-//             case "skinad":
-//                 SkinAd(config, platform, doc);
-//                 break;
-//         }
-//     }
-
-//     return { init };
-// });
 
