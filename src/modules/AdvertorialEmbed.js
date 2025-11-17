@@ -73,7 +73,7 @@ export function AdvertorialEmbed(config, win, doc, site, pageType) {
         IFRAME_EMBED_ARTICLE_WRAPPER.appendChild(label);
         IFRAME_EMBED_ARTICLE_WRAPPER.appendChild(IFRAME_EMBED_ARTICLE);
         createCTA(IFRAME_EMBED_ARTICLE_WRAPPER);
-        // tweakCss();
+        tweakCss();
 
         win.addEventListener('message', (event) => {
             // Handle the received message
