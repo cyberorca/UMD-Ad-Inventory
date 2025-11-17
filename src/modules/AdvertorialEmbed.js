@@ -4,7 +4,6 @@ export function AdvertorialEmbed(config, win, doc, site, pageType) {
     const IFRAME_EMBED_ARTICLE_WRAPPER = document.createElement("div")
     const IFRAME_EMBED_ARTICLE = document.createElement("iframe");
     const CURRENT_SCRIPT = document.currentScript;
-    var isIframeReisized = false;
     const EMBED_URL = config.embedURL;//"https://d.kapanlaginetwork.com/banner/preview/2025/11/14/bolacom-revive-advertorial-embed-DWm5X6dty/wangiyangbikininget-ffar-jadi-senjata-andalan-pria-ambisius-biar-selalu-tampil-menarik.html?advembed=1";
     const SETTINGS = {
         "bolacom": {
@@ -74,18 +73,6 @@ export function AdvertorialEmbed(config, win, doc, site, pageType) {
         IFRAME_EMBED_ARTICLE_WRAPPER.appendChild(IFRAME_EMBED_ARTICLE);
         createCTA(IFRAME_EMBED_ARTICLE_WRAPPER);
         tweakCss();
-
-        win.addEventListener('message', (event) => {
-            // Handle the received message
-            if (event.data.type == "iframeResizer" && !isIframeReisized) {
-                // console.log('Received message:', event.data);
-                // tweakCss(event.data);
-                tweakCss();
-                setTimeout(function() {
-                    isIframeReisized = true;
-                }, 3000)
-            }
-        });
     }
     //height : ${data.dimensions.height * 4 / 10 }px !important;
     // function tweakCss(data) {
