@@ -25,6 +25,7 @@ async function init(format, config) {
         SkinAd(config, platform, doc);
         break;
       case "advertorial-embed":
+        console.log("INIT ADVERTORIAL EMBED");
         AdvertorialEmbed(config, win, doc, site, pageType);
         break;
       default:
