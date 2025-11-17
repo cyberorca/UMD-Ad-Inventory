@@ -25,7 +25,7 @@ async function init(format, config) {
         SkinAd(config, platform, doc);
         break;
       case "advertorial-embed":
-        AdvertorialEmbed(win, doc, config, site, pageType);
+        AdvertorialEmbed(config, win, doc, site, pageType);
         break;
       default:
         console.warn("Unknown format:", format);

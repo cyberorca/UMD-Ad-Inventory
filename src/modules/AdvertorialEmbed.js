@@ -1,4 +1,4 @@
-export function AdvertorialEmbed(win, doc, config, site, pageType) {
+export function AdvertorialEmbed(config, win, doc, site, pageType) {
     const SITENAME = site;
     const PAGETYPE = pageType;
     const IFRAME_EMBED_ARTICLE_WRAPPER = document.createElement("div")
@@ -50,6 +50,7 @@ export function AdvertorialEmbed(win, doc, config, site, pageType) {
 
 
     function klyAds() {
+        console.log("HALLOOOO!");
         const isNotEmpty = doc.querySelector("#kly-embeded-article-wrapper");
 
         if (isNotEmpty) return;
