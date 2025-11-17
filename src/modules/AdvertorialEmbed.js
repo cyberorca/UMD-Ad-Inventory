@@ -199,7 +199,7 @@ export function AdvertorialEmbed(config, win, doc, site, pageType) {
            e.preventDefault();
 
           // Always use the native open, never Revive's wrapped one
-          nativeOpen(`${config.clickUrl}${getNonEmbedUrl()}`, "_blank");
+          nativeOpen(config.clickUrl+getNonEmbedUrl(), "_blank");
        });
 
        target.appendChild(btn);
