@@ -1,10 +1,15 @@
 {
   "name": "pl",
-  "version": "1.0.1-beta.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "KLY Creative Library wrapper",
   "main": "index.js",
   "scripts": {
-    "build": "npx webpack --config webpack.config.js",
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "build:dev": "NODE_ENV=development webpack --config webpack.config.js",
+    "build:watch": "NODE_ENV=development webpack --config webpack.config.js --watch",
+    "build:analyze": "ANALYZE=true npm run build",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,10 +17,12 @@
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "clean-webpack-plugin": "^4.0.0",
     "eslint": "^9.39.1",
     "eslint-webpack-plugin": "^5.0.2",
     "globals": "^16.5.0",
     "webpack": "^5.102.1",
+    "webpack-bundle-analyzer": "^4.10.1",
     "webpack-cli": "^6.0.1",
     "webpack-manifest-plugin": "^6.0.1"
   },
