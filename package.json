@@ -1,7 +1,8 @@
 {
   "name": "pl",
   "version": "1.1.0",
-  "description": "KLY Creative Library wrapper",
+  "private": "true",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack.config.js",
